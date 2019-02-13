@@ -2,7 +2,8 @@ import occasi_data as occ_data
 import models
 import comparative_learning
 
-
+import sklearn
+print(sklearn.__version__)
 
 #VGG-Layer-Test
 #('features_vgg16_layer_global_max_pooling2d_3.npy',0),
