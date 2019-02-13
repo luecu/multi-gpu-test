@@ -10,7 +10,7 @@ RUN apt-get update
 #RUN locale-gen en_US.UTF-8
 #ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 RUN apt-get install -y python3 python3-pip python3-tk python3-numpy python3-pandas python3-sklearn libglib2.0-0 libsm6 libxext6
-RUN pip3 install Keras-Applications==1.0.6 keras==2.2.4 image matplotlib h5py tensorflow-gpu==1.12.0 opencv-python img_rotate
+RUN pip3 install Keras-Applications==1.0.6 keras==2.2.4 image scikit-learn matplotlib h5py tensorflow-gpu==1.12.0 opencv-python img_rotate
 # download data to data folder
 
 ADD comparative_learning.py /workdir/comparative_learning.py

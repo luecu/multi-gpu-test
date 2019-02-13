@@ -1,5 +1,4 @@
 import keras
-from IPython.display import SVG
 from keras.optimizers import Adam
 from keras.utils.vis_utils import model_to_dot
 from keras.callbacks import TensorBoard
