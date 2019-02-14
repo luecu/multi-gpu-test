@@ -5,7 +5,6 @@ import pandas as pd
 import random
 from sklearn.preprocessing import StandardScaler
 from sklearn.cross_validation import train_test_split
-from keras.applications.vgg16 import preprocess_input
 
 class data:
 

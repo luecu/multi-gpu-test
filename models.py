@@ -3,7 +3,6 @@ from keras.layers import Embedding, Input, Dot, Subtract, Lambda, Dense, Activat
 from keras.optimizers import Nadam, Adam
 from keras import backend as K
 import keras
-from keras.applications import vgg19, densenet
 
 import pandas as pd
 import numpy as np
