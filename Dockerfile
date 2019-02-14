@@ -17,12 +17,12 @@ RUN pip3 install Keras-Applications==1.0.6 keras==2.2.4 image scikit-learn matpl
 # Install Protocol Buffer
 RUN apt-get install -y git build-essential cmake zlib1g-dev wget unzip python3-dev python-dev
 ENV PROTOBUF_VERSION 3.6.0
-RUN wget -O /container-data/protoc-$PROTOBUF_VERSION.zip https://github.com/google/protobuf/releases/download/v$PROTOBUF_VERSION/protoc-$PROTOBUF_VERSION-linux-x86_64.zip && \
-	unzip /container-data/protoc-$PROTOBUF_VERSION.zip -d /container-data/protoc && \
-	rm /container-data/protoc-$PROTOBUF_VERSION.zip
-RUN mv /container-data/protoc/bin/* /usr/local/bin/ && \
-	mv /container-data/protoc/include/* /usr/local/include/ && \
-	rm -rf /container-data/protoc
+RUN wget -O /workdir/protoc-$PROTOBUF_VERSION.zip https://github.com/google/protobuf/releases/download/v$PROTOBUF_VERSION/protoc-$PROTOBUF_VERSION-linux-x86_64.zip && \
+	unzip /workdir/protoc-$PROTOBUF_VERSION.zip -d /workdir/protoc && \
+	rm /workdir/protoc-$PROTOBUF_VERSION.zip
+RUN mv /workdir/protoc/bin/* /usr/local/bin/ && \
+	mv /workdir/protoc/include/* /usr/local/include/ && \
+	rm -rf /workdir/protoc
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 RUN git clone https://github.com/apple/coremltools.git && \
 	cd coremltools && \
