@@ -9,7 +9,7 @@ print(sklearn.__version__)
 #('features_vgg16_layer_global_max_pooling2d_3.npy',0),
 #image_inputs = ['features_vgg16_layer_block5_pool.npy', 'features_vgg16_layer_block4_pool.npy', 'features_vgg16_layer_block3_pool.npy', 'features_vgg16_layer_block2_pool.npy', 'features_vgg16_layer_block1_pool.npy']
 image_inputs = ['features_vgg16_layer_block1_pool.npy']
-nr_of_epochs = 1
+nr_of_epochs = 20
 for image_input in image_inputs:
     title = 'vgg16-layers-' + image_input
     filename = title

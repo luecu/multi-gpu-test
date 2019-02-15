@@ -49,32 +49,6 @@ def fit(model, occasi_data, nr_of_epochs, model_summary, batch_size=32, title=''
     
     model_summary.at['history'] = history
     
-    print(history.history['loss'])
-    end_loss = round(history.history['loss'][-1],5)
-    min_val_loss = round(min(history.history['val_loss']),5)
-    max_val_acc = round(max(history.history['val_acc']),5)
-    print("end loss = " + str(end_loss))
-    print("min_val_loss = " + str(min_val_loss))
-    print("max_val_acc = " + str(max_val_acc))
-    
-    filename = filename + '_withendloss_' + str(end_loss)
-    pd.Series(history.history['loss']).plot(logy=True)
-    pd.Series(history.history['val_loss']).plot(logy=True)
-    pd.Series(history.history['acc']).plot(logy=True)
-    pd.Series(history.history['val_acc']).plot(logy=True)
-    plt.xlabel("Epoch")
-    plt.ylabel("Loss / Accuracy")
-    plt.legend(['train_loss', 'val_loss', 'train_acc', 'val_acc'], loc='upper right')
-    plt.title(title)
-    plt.suptitle(filename)
-    plt.savefig("images/loss-" + filename + ".jpeg")
-    plt.show()
-
-    if save_model:
-        filename = filename  + '.h5'
-        model.save("models/" + filename)
-        model_summary.at['model_filename'] = filename
-    
     return model
 
     
