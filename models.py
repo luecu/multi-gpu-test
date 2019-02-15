@@ -140,6 +140,7 @@ def private_simple_architectur_with_flattening(image_vector_input_size,
     model_summary.at['optimizer'] = 'Adam'
     
     if nr_of_gpus > 1:
+        print('transform model to use ' + str(nr_of_gpus) + ' GPUs')
         model = multi_gpu_model(model, gpus=nr_of_gpus)
         
     model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])

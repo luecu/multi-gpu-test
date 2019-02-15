@@ -24,7 +24,8 @@ for image_input in image_inputs:
                                                  learning_rate=0.001,
                                                  amount_of_nodes=512,
                                                  model_summary=model_summary,
-                                                 dropout=0.5
+                                                 dropout=0.5,
+												 nr_of_gpus = 8
                                                  )
     #model.summary()
     model = comparative_learning.fit(model,
