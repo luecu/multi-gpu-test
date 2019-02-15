@@ -41,7 +41,8 @@ def fit(model, occasi_data, nr_of_epochs, model_summary, batch_size=32, title=''
                                   steps_per_epoch=steps_per_epoch,
                                   epochs=nr_of_epochs,
                                   verbose=verbose,
-                                  workers=6
+                                  max_queue_size=300
+                                  #workers=20
                                   #use_multiprocessing=True
                                  )
                                   #callbacks=[tensorboard])
