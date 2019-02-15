@@ -1,11 +1,10 @@
 FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
-WORKDIR /multi-gpu-test
-
 RUN apt-get update
 
-RUN apt-get install -y git 
-RUN git clone https://github.com/luecu/multi-gpu-test.git
+WORKDIR /multi-gpu-test
+
+VOLUME /multi-gpu-test
 
 RUN apt-get install -y locales
 RUN locale-gen en_US.UTF-8
@@ -31,6 +30,11 @@ RUN git clone https://github.com/apple/coremltools.git && \
 	make && \
 	pip3 install -e .
 	
+ADD comparative_learning.py /workdir/comparative_learning.py	
+ADD models.py /workdir/models.py	
+ADD occasi_data.py /workdir/occasi_data.py	
+ADD plot_helper.py /workdir/plot_helper.py	
+ADD run.py /workdir/run.py
 
 ADD data/2018-12-17_collaborative_filtering_user_preferences.npz /multi-gpu-test/data/2018-12-17_collaborative_filtering_user_preferences.npz
 ADD data/data_occasi-images.npz /multi-gpu-test/data/data_occasi-images.npz
