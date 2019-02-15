@@ -34,5 +34,6 @@ for image_input in image_inputs:
                       title=title, 
                       filename=filename,
                       save_model=True,
+					  batch_size=8*64,
                       verbose=1)
 
