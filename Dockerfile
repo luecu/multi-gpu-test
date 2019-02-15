@@ -1,11 +1,12 @@
 FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
-RUN apt-get install -y git 
-RUN git clone https://github.com/luecu/multi-gpu-test.git
-
 WORKDIR /multi-gpu-test
 
 RUN apt-get update
+
+RUN apt-get install -y git 
+RUN git clone https://github.com/luecu/multi-gpu-test.git
+
 RUN apt-get install -y locales
 RUN locale-gen en_US.UTF-8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
