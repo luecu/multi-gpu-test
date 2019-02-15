@@ -1,5 +1,6 @@
 FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
+RUN apt-get install -y git 
 RUN git clone https://github.com/luecu/multi-gpu-test.git
 
 WORKDIR /multi-gpu-test
