@@ -40,8 +40,9 @@ def fit(model, occasi_data, nr_of_epochs, model_summary, batch_size=32, title=''
                                   validation_data=([cv_user_features, cv_img1_features, cv_img2_features], cv_y),
                                   steps_per_epoch=steps_per_epoch,
                                   epochs=nr_of_epochs,
-                                  verbose=verbose
-                                  #workers=6,
+                                  verbose=verbose,
+                                  workers=6,
+                                  use_multiprocessing=True
                                   #use_multiprocessing=True
                                  )
                                   #callbacks=[tensorboard])
